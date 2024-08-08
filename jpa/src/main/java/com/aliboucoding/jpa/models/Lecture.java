@@ -15,7 +15,8 @@ public class Lecture extends BaseEntity {
 //    @Id
 //    @GeneratedValue
 //    private Integer id;
-//    private String name;
+
+    private String name;
 
     @ManyToOne
     @JoinColumn(name = "section_id")
