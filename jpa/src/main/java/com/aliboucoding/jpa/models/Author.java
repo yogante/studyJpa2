@@ -16,7 +16,7 @@ import java.util.List;
 //@Table/* (name = "AUTHOR_TBL") */
 public class Author extends BaseEntity {
 
-    @Id
+    /* @Id
     @GeneratedValue
             /*(
             strategy = GenerationType.TABLE,
@@ -32,7 +32,10 @@ public class Author extends BaseEntity {
             valueColumnName = "id_value",
             allocationSize = 1
     ) */
-    private Integer id;
+// **** BaseEntity にまとめてるので省略
+// @EqualsAndHashCode(callSuper = true)をつけること。
+// BuilderからSuperBuilderへの変更も忘れずに。
+// private Integer id;
 
     @Column(
             name = "f_name",
