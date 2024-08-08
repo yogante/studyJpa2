@@ -2,15 +2,19 @@ package com.aliboucoding.jpa.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder
 @Entity
-@Table(name = "AUTHOR_TBL")
-public class Author {
+//@Table/* (name = "AUTHOR_TBL") */
+public class Author extends BaseEntity {
 
     @Id
     @GeneratedValue
@@ -43,16 +47,17 @@ public class Author {
     private String email;
     private int age;
 
-    @Column(
-            updatable = false,
-            nullable = false
-    )
-    private LocalDateTime createAt;
 
-    @Column(
-            insertable = false
-    )
-    private LocalDateTime lastModified;
+//    @Column(
+//            updatable = false,
+//            nullable = false
+//    )
+//    private LocalDateTime createAt;
+//
+//    @Column(
+//            insertable = false
+//    )
+//    private LocalDateTime lastModified;
 
 
 }
