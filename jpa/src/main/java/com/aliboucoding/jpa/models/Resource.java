@@ -5,14 +5,16 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+// @DiscriminatorColumn(name = "resource_type")
 public class Resource {
-
 
     @Id @GeneratedValue
     private Integer id;
@@ -24,5 +26,6 @@ public class Resource {
     @OneToOne
     @JoinColumn(name = "lecture_id")
     private Lecture lecture;
+
 
 }
