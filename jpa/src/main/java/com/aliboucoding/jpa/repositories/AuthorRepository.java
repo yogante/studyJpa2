@@ -3,6 +3,7 @@ package com.aliboucoding.jpa.repositories;
 import com.aliboucoding.jpa.models.Author;
 import jakarta.persistence.NamedQueries;
 import jakarta.transaction.Transactional;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
@@ -54,4 +55,5 @@ public interface AuthorRepository extends JpaRepository<Author, Integer> {
     List<Author> findAllByFirstNameInIgnoreCase(List<String> firstNames);
 
 
+    Iterable<Object> findAll(Specification<Author> spec);
 }
