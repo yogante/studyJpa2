@@ -12,14 +12,13 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-// @DiscriminatorColumn(name = "resource_type")
+@Inheritance(strategy = InheritanceType.JOINED /*.TABLE_PER_CLASS */ )
+// @DiscriminatorColumn(name = "resource_type") // ---> only with SINGLE_TABLE
 public class Resource {
 
     @Id @GeneratedValue
     private Integer id;
     private String name;
-
     private int size;
     private String url;
 

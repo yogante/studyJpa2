@@ -19,7 +19,8 @@ public class Course extends BaseEntity {
 
 //    @Id @GeneratedValue
 //    private Integer id;　
-    private  String name;
+
+    private  String title;
     private String description;
 
     @ManyToMany
@@ -32,6 +33,7 @@ public class Course extends BaseEntity {
                     @JoinColumn(name = "author_id")
             }
     )
+
     private List<Author> authors;
 
     @OneToMany(mappedBy = "course")
