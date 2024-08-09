@@ -47,9 +47,14 @@ public class JpaApplication {
 
 			// update Author a seta a.age = 22 where a.id= 1
 			repository.updateAuthor(22, 1);
+			// update all authors
 			// repository.updateAuthorsAge(99);
 
+			// find by named query
+			repository.findByNamedQuery(22)
+					.forEach(System.out::println);
 
+			repository.updateByNamedQuery(12);
 
 			/* var author = Author.builder()
 					.firstName("alibou")
@@ -68,5 +73,6 @@ public class JpaApplication {
 
 
 		};
+
 	}
 }
